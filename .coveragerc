@@ -1,0 +1,6 @@
+[run]
+omit =
+    *migrations*,
+    *tests*,
+    wallapp_backend*,
+    conftest.py
