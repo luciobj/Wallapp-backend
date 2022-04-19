@@ -4,10 +4,10 @@ from rest_framework.routers import DefaultRouter
 
 
 router = DefaultRouter()
+router.register('postit', PostItList, basename='get')
 router.register('postit', PostItViewSet, basename='postit')
 
 
 urlpatterns = [
-    path('api/get/', PostItList.as_view()),
-    path('', include(router.urls)),
+    path('api/', include(router.urls)),
 ]
