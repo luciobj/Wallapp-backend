@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     #3rd party apps
+    'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
-    'corsheaders',
     #Custom apps
     'users.apps.UsersConfig',
     'api.apps.ApiConfig',
@@ -147,3 +147,13 @@ AUTH_USER_MODEL = 'users.User'
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
 ]
+
+#Send
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-mail.outlook.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'wallapp-not-reply@hotmail.com'
+EMAIL_HOST_PASSWORD = 'sup0rtAcc'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
