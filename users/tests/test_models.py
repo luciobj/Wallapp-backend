@@ -1,9 +1,10 @@
 import pytest
 from rest_framework.test import APITestCase
 from ..models import User
+from django.core import mail
+from django.test import TestCase
 
 pytestmark = pytest.mark.django_db
-
 
 class UserModelTests(APITestCase):
     def test_create_user(self):
@@ -29,3 +30,17 @@ class UserModelTests(APITestCase):
         assert user.is_staff
         assert user.is_superuser
         assert User.objects.all().count() == user_quantity + 1
+
+
+class EmailTest(TestCase):
+    def test_send_email(self):
+        mail.send_mail(
+            'Welcome to WallApp',
+            'You have been registered',
+            'wallapp-not-reply@hotmail.com',
+            ['test@test.com'],
+            fail_silently=False,
+        )
+
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(mail.outbox[0].subject, 'Welcome to WallApp')
