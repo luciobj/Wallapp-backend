@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     #3rd party apps
     'corsheaders',
     'rest_framework',
-    'rest_framework_simplejwt',
+    'rest_framework.authtoken',
     #Custom apps
     'users.apps.UsersConfig',
     'api.apps.ApiConfig',

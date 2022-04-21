@@ -2,7 +2,7 @@ from .models import PostIt
 from .serializers import PostItSerializer
 from rest_framework import viewsets, mixins
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.authentication import JWTAuthentication
+from rest_framework.authentication import TokenAuthentication
 
 
 class PostItList(viewsets.GenericViewSet, mixins.ListModelMixin):
@@ -13,4 +13,4 @@ class PostItViewSet(viewsets.GenericViewSet, mixins.DestroyModelMixin, mixins.Up
     queryset = PostIt.objects.all()
     serializer_class = PostItSerializer
     permission_classes  = [IsAuthenticated]
-    authentication_classes = [JWTAuthentication]
+    authentication_classes = [TokenAuthentication]
