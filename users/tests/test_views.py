@@ -12,7 +12,7 @@ user = {
     "password2": '123456',
 }
 
-class TestPostItListView(APITestCase):
+class TestUserListView(APITestCase):
     def test_reverse_resolve(self):
         assert reverse("user-create") == "/users/"
         assert resolve("/users/").view_name == "user-create"
