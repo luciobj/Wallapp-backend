@@ -1,11 +1,7 @@
-from django.urls import path, include
+from django.urls import path
 from .views import UserCreateView
-from rest_framework.routers import DefaultRouter
 
-
-router = DefaultRouter()
-router.register('users', UserCreateView, basename='users')
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('users/', UserCreateView.as_view({'post': 'create'}), name='user-create'),
 ]
