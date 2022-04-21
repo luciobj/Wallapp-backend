@@ -42,5 +42,5 @@ class EmailTest(TestCase):
             fail_silently=False,
         )
 
-        self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].subject, 'Welcome to WallApp')
+        assert len(mail.outbox) == 1
+        assert mail.outbox[0].subject == 'Welcome to WallApp'
