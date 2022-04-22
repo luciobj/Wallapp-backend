@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 
 
 router = DefaultRouter()
-router.register('postit', PostItList, basename='get')
+router.register('get', PostItList, basename='get')
 router.register('postit', PostItViewSet, basename='postit')
 
 

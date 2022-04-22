@@ -9,7 +9,7 @@ class PostItList(viewsets.GenericViewSet, mixins.ListModelMixin):
     queryset = PostIt.objects.all()
     serializer_class = PostItSerializer
 
-class PostItViewSet(viewsets.GenericViewSet, mixins.DestroyModelMixin, mixins.UpdateModelMixin, mixins.CreateModelMixin):
+class PostItViewSet(viewsets.ModelViewSet):
     queryset = PostIt.objects.all()
     serializer_class = PostItSerializer
     permission_classes  = [IsAuthenticated]
