@@ -38,12 +38,8 @@ From now on, when starting the server, you can omit the '--build', as it is only
 docker-compose up -d
 ```
 
-This project uses the sendgrid API for sending emails after registration. Therefore, before starting the server, it is important that you create a `.env` file containing the following variables:
+This project uses a seet host email for sending emails after registration. A makeshift email is provided, but you can change it in the `settings.py` file.
 
-```
-SENDGRID_API_KEY = <your_key_here>
-FROM_EMAIL = <your_sender_email>
-```
 ## Unit Testing
 
 You can run the tests created for this application by running the command
@@ -56,6 +52,6 @@ docker-compose exec web pytest --cov
 ```
 ## Usage
 
-After starting the server, you can try all the functionalities of this API by using an 'API Client' such as `Insomnia` or `Postman`.
+After starting the server, you can try all the functionalities of this API by using an 'API Client' such as `Insomnia` or `Postman`. A file with Insomnia configuration for this API is available in the repository.
 
 This API is designed to be used by this front-end application [here](https://github.com/luciobj/wallapp-frontend). So you can also consider installing and running it if you want to see how everything works together.
