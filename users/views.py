@@ -18,7 +18,7 @@ class UserCreateView(viewsets.GenericViewSet, mixins.CreateModelMixin):
                 'You have been registered',
                 'wallapp-not-reply@hotmail.com',
                 [request.data['email']],
-                fail_silently=False,
+                fail_silently=True,
             )
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
