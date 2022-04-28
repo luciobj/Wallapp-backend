@@ -8,5 +8,6 @@ WORKDIR /code
 RUN python -m pip install --upgrade pip
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+RUN python ./managy.py migrate
 
 COPY . .
