@@ -26,6 +26,13 @@ git clone git@github.com:luciobj/Wallapp-backend.git
 cd Wallapp-backend
 ```
 
+Create and run your python virtual environment:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
 Run the docker command to made the first build and start the server.
 
 ```bash
@@ -36,6 +43,12 @@ From now on, when starting the server, you can omit the '--build', as it is only
 
 ```bash
 docker-compose up -d
+```
+
+Finally, make the database migrations by running the command:
+
+```bash
+docker-compose exec web python manage.py migrate
 ```
 
 This project uses a seet host email for sending emails after registration. A makeshift email is provided, but you can change it in the `settings.py` file.
