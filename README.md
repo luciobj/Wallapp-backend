@@ -26,7 +26,7 @@ git clone git@github.com:luciobj/Wallapp-backend.git
 cd Wallapp-backend
 ```
 
-Create and run your python virtual environment:
+Create and run your python virtual environment. The example uses venv, but you can use your preferred tool:
 
 ```bash
 python3 -m venv venv
@@ -53,6 +53,14 @@ docker-compose exec web python manage.py migrate
 
 This project uses a seet host email for sending emails after registration. A makeshift email is provided, but you can change it in the `settings.py` file.
 
+You can access the API from your browser, using the url `http://localhost:8000/api/get/`.
+
+If you want to access the admin panel, create your superuser using the following command, and access the url `http://localhost:8000/admin/`:
+
+```bash
+docker-compose exec web python manage.py createsuperuser
+```
+
 ## Unit Testing
 
 You can run the tests created for this application by running the command
@@ -63,6 +71,7 @@ And you can check the test coverage by running
 ```bash
 docker-compose exec web pytest --cov
 ```
+
 ## Usage
 
 After starting the server, you can try all the functionalities of this API by using an 'API Client' such as `Insomnia` or `Postman`. A file with Insomnia configuration for this API is available in the repository.
